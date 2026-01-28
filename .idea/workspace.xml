@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21049ada-9a1b-497c-909f-44742063395e" name="Changes" comment="Update:&#10;Change the readme into English.">
+      <change afterPath="$PROJECT_DIR$/Formal_v1.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inside_verify_V3.py" beforeDir="false" afterPath="$PROJECT_DIR$/inside_verify_V3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider_tensorboard/MaskablePPO_1/events.out.tfevents.1769560275.elonmusk.66552.0" beforeDir="false" afterPath="$PROJECT_DIR$/spider_tensorboard/MaskablePPO_1/events.out.tfevents.1769560275.elonmusk.66552.0" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.inside_verify_V3.executor": "Run",
     "Python.logic.executor": "Run",
     "Python.testGPU.executor": "Run",
     "Python.test_20260127_001.executor": "Run",
@@ -58,7 +62,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769499846187</updated>
-      <workItem from="1769499847199" duration="17603000" />
+      <workItem from="1769499847199" duration="20482000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -153,6 +157,7 @@
     <SUITE FILE_PATH="coverage/Marcuspider$test_20260127_001.coverage" NAME="test_20260127_001 Coverage Results" MODIFIED="1769500335184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Marcuspider$testGPU.coverage" NAME="testGPU Coverage Results" MODIFIED="1769502067019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Marcuspider$verify_V3.coverage" NAME="verify_V3 Coverage Results" MODIFIED="1769569349630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Marcuspider$inside_verify_V3.coverage" NAME="inside_verify_V3 Coverage Results" MODIFIED="1769573527514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Marcuspider$logic.coverage" NAME="logic Coverage Results" MODIFIED="1769511052683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
