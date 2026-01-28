@@ -1,118 +1,112 @@
 # 🕷️ Marcuspider — Spider Solitaire Reinforcement Learning Agent
-## 项目简介 / Project Overview
 
-Marcuspider 是一个基于强化学习的 蜘蛛纸牌（Spider Solitaire，单花色）AI 项目。
-该项目使用自定义环境模拟蜘蛛纸牌规则，并通过 Maskable PPO 训练智能体，在合法动作约束下学习完成整局游戏。
+## Project Overview
 
-Marcuspider is a Reinforcement Learning agent for Spider Solitaire (single-suit).
-It implements a custom OpenAI Gym–style environment and trains an agent using Maskable PPO to solve the game under strict rule-based action constraints.
+**Marcuspider** is a reinforcement learning project that trains an AI agent to play  
+**Spider Solitaire (single-suit variant)**.
 
-## 🎯 项目目标 / Goals
+The project implements a custom game environment that faithfully models Spider Solitaire rules
+and trains an agent using **Maskable Proximal Policy Optimization (Maskable PPO)** with action masking,
+ensuring that only legal moves are considered during learning and inference.
 
-实现一个 规则正确、可扩展 的蜘蛛纸牌强化学习环境
+---
 
-在 单花色 Spider Solitaire 设定下训练稳定可用的 AI
+## Goals
 
-支持：
+- Build a **rule-correct and extensible** Spider Solitaire environment
+- Train a stable and effective agent for **single-suit Spider Solitaire**
+- Support:
+  - Legal action masking
+  - Automatic sequence completion detection (K → A)
+  - Card flipping and dealing mechanics
+- Provide a **live testing script** for evaluating model decisions in real games
 
-合法动作掩码（Action Masking）
+---
 
-完整序列（A–K）自动判定与移除
+## Core Approach
 
-翻牌、发牌等真实规则
+### Reinforcement Learning
 
-提供 实战辅助脚本，用于在真实游戏中测试模型决策
+- Algorithm: **Maskable PPO** (`sb3-contrib`)
+- Action masking is used to prevent illegal moves and reduce exploration space
 
-## 🧠 核心方法 / Core Approach
+### Observation Space
 
-强化学习算法 / RL Algorithm
+- 10 tableau columns
+- Up to 30 cards per column
+- Each card is represented by:
+  - Card value (`1–13`, or `-1` for face-down cards)
+  - Face-up flag (`0/1`)
+- Card suit is omitted because the environment targets the **single-suit** variant
 
-Maskable PPO（来自 sb3-contrib）
+### Action Space
 
-动作掩码确保智能体只选择合法操作
+- `0–99`: Move a valid descending face-up sequence from column `src` to column `dest`
+- `100`: Deal one new card to each column
 
-状态表示 / Observation
+---
 
-每列最多 30 张牌
+## Game Rules Modeled
 
-每张牌编码：
+- Single-suit Spider Solitaire
+- A move is legal if:
+  - Cards form a strictly descending sequence
+  - All cards are face-up
+  - All cards share the same suit (always true in single-suit mode)
+- Automatic rule handling:
+  - Flip the next card after a successful move
+  - Remove completed sequences of **13 cards (K → A)**
+  - Dealing is only allowed when all columns are non-empty
 
-点数（1–13，或 -1 表示盖牌）
+---
 
-是否翻开（face_up）
+## Project Structure
 
-单花色设定下不编码花色（suit）
-
-动作空间 / Action Space
-
-0–99：将第 src 列的可移动序列移动到第 dest 列
-
-100：发牌（每列一张）
-
-## 🃏 游戏规则建模 / Game Rules Modeled
-
-单花色蜘蛛纸牌（Single-Suit Spider Solitaire）
-
-允许移动：
-
-连续递减
-
-全部翻开
-
-同花色（单花色情况下恒成立）
-
-自动规则处理：
-
-合法移动后自动翻牌
-
-完整 K → A（13 张） 序列自动移除
-
-发牌前必须保证所有列非空
-
-## 🗂️ 项目结构 / Project Structure
 Marcuspider/
-├── logic.py              # 强化学习环境（Spider Solitaire 规则核心）
-├── train.py              # 模型训练脚本（Maskable PPO）
-├── verify_V3.py          # 实战同步测试脚本（与真实游戏交互）
-├── verify_real_game.py   # （实验中）真实游戏测试脚本
-├── testGPU.py            # GPU 可用性测试
-├── models/               # 训练得到的模型（本地生成）
+├── logic.py # Core Spider Solitaire environment
+├── train.py # RL training script (Maskable PPO)
+├── verify_V3.py # Live testing & human-assisted verification script
+├── verify_real_game.py # Experimental real-game testing script
+├── testGPU.py # GPU availability check
+├── models/ # Trained models (generated locally)
 └── README.md
 
-## 🧪 verify_V3.py 说明 / About verify_V3.py
 
-verify_V3.py 是一个 人机协作测试脚本，用于：
+---
 
-将 AI 的动作决策应用到真实蜘蛛纸牌游戏中
+## About verify_V3.py
 
-由用户输入真实游戏中的翻牌 / 发牌点数
+`verify_V3.py` is a **human-in-the-loop testing tool** designed to:
 
-在不破坏环境逻辑的前提下验证模型行为
+- Apply the AI agent’s decisions to a real Spider Solitaire game
+- Allow manual input for revealed and dealt card values
+- Keep the internal game state synchronized with real gameplay
 
-⚠️ 注意：该脚本仅用于测试与验证，不影响训练环境 logic.py 的正确性。
+> Note: This script is intended for **testing and verification only**  
+> and does not affect the correctness of the training environment (`logic.py`).
 
-🏗️ 当前状态 / Current Status
+---
 
-✅ 单花色 Spider Solitaire 环境规则已完成并验证
+## Current Status
 
-✅ 模型可稳定训练并给出合理策略
+- ✅ Single-suit Spider Solitaire environment implemented and verified
+- ✅ Agent can be trained stably and produces reasonable strategies
+- 🚧 Live verification script (`verify_V3.py`) is still under active refinement
+- 🔄 Environment design supports future extensions
 
-🚧 实战测试脚本（verify_V3）仍在持续优化中
+---
 
-🔮 未来可扩展至：
+## Future Work
 
-多花色 Spider
+- Support for **two-suit and four-suit** Spider Solitaire
+- Improved reward shaping focused on win rate
+- Automated real-game state recognition (computer vision)
+- Strategy analysis and visualization tools
 
-更精细的奖励设计
+---
 
-完全自动化的真实游戏识别
+## Notes
 
-## 🚀 未来计划 / Future Work
+This project focuses on **environment design and rule-consistent reinforcement learning**
+rather than minimal code size, prioritizing clarity, extensibility, and correctness.
 
-支持 2 / 4 花色 Spider Solitaire
-
-引入更贴近胜率的奖励函数
-
-自动识别真实游戏画面（CV + RL）
-
-长期策略分析与可视化
