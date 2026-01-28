@@ -88,7 +88,7 @@ def print_top(columns):
 
 
 def live_test():
-    model = MaskablePPO.load("marcuspider_v2_final")
+    model = MaskablePPO.load("marcuspider_v1_new.zip")
     columns = [[] for _ in range(10)]
 
     print("\n=== Marcuspider 智能同步助手 V3（单花色） ===")

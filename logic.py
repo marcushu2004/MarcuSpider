@@ -80,7 +80,7 @@ class SpiderEnv(gym.Env):
         return obs.flatten()
 
     def step(self, action):
-        # --- 核心修改：全局步数税 ---
+        # 全局步数税
         # 每一帧都扣除微小分数，逼迫 AI 尽快行动，不磨洋工
         reward = -0.05
 
