@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21049ada-9a1b-497c-909f-44742063395e" name="Changes" comment="This commit finalizes the Spider Solitaire live verification script and marks&#10;the first stable testing release (v1.0).&#10;&#10;Key changes:&#10;- Fixed state desynchronization issues in the verification script&#10;- Correctly tracked remaining deal counts (deals_left)&#10;- Ensured deal actions are only allowed when stock is available&#10;- Added proper deadlock detection when no legal moves remain&#10;- Aligned verification logic strictly with SpiderEnv rules&#10;- Verified correct behavior through extended real-game testing&#10;&#10;The environment logic and trained model remain unchanged.&#10;This release establishes a reliable and deterministic testing pipeline&#10;for evaluating agent decisions in real Spider Solitaire games.">
+    <list default="true" id="21049ada-9a1b-497c-909f-44742063395e" name="Changes" comment="Add the new model. Better than old.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Formal_v1.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/Formal_v1.0.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marcuspider_v2_final.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_1000000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_100000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_200000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_300000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_400000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_500000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_600000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_700000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_800000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/marcuspider_v2_900000_steps.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1769499846187</updated>
-      <workItem from="1769499847199" duration="26152000" />
+      <workItem from="1769499847199" duration="29071000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -157,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769573984150</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add the new model. Better than old.">
+      <option name="closed" value="true" />
+      <created>1769581643664</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1769581643664</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +164,8 @@
     <MESSAGE value="Update:&#10;Add the new readme" />
     <MESSAGE value="Update:&#10;Change the readme into English." />
     <MESSAGE value="This commit finalizes the Spider Solitaire live verification script and marks&#10;the first stable testing release (v1.0).&#10;&#10;Key changes:&#10;- Fixed state desynchronization issues in the verification script&#10;- Correctly tracked remaining deal counts (deals_left)&#10;- Ensured deal actions are only allowed when stock is available&#10;- Added proper deadlock detection when no legal moves remain&#10;- Aligned verification logic strictly with SpiderEnv rules&#10;- Verified correct behavior through extended real-game testing&#10;&#10;The environment logic and trained model remain unchanged.&#10;This release establishes a reliable and deterministic testing pipeline&#10;for evaluating agent decisions in real Spider Solitaire games." />
-    <option name="LAST_COMMIT_MESSAGE" value="This commit finalizes the Spider Solitaire live verification script and marks&#10;the first stable testing release (v1.0).&#10;&#10;Key changes:&#10;- Fixed state desynchronization issues in the verification script&#10;- Correctly tracked remaining deal counts (deals_left)&#10;- Ensured deal actions are only allowed when stock is available&#10;- Added proper deadlock detection when no legal moves remain&#10;- Aligned verification logic strictly with SpiderEnv rules&#10;- Verified correct behavior through extended real-game testing&#10;&#10;The environment logic and trained model remain unchanged.&#10;This release establishes a reliable and deterministic testing pipeline&#10;for evaluating agent decisions in real Spider Solitaire games." />
+    <MESSAGE value="Add the new model. Better than old." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the new model. Better than old." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Marcuspider$verify_real_game.coverage" NAME="verify_real_game Coverage Results" MODIFIED="1769567823069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
